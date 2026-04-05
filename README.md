@@ -94,7 +94,7 @@ All algorithms are implemented in `search.py` and return a **list of actions** (
 | `AStarFoodSearchAgent` | A* agent that collects all food |
 | `ClosestDotSearchAgent` | Greedily eats the closest dot |
 
-### Available Heuristics
+### Available Heuristics for aStar Search
 
 | Heuristic | Description |
 |-----------|-------------|
