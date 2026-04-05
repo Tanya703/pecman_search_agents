@@ -125,6 +125,14 @@ python pacman.py -l bigMaze -z .5 -p SearchAgent
 > The board shows an overlay of explored states (brighter red = explored earlier).
 > Expected solution length for `mediumMaze`: **130** (pushing successors in the order returned by `getSuccessors`).
 
+**mediumMaze — DFS** (path goes along the top, many unexplored areas):
+
+![mediumMaze DFS](screenshots/mediumMaze_dfs.png)
+
+**bigMaze — DFS** (explores fewer nodes but path is not guaranteed optimal):
+
+![bigMaze DFS](screenshots/bigMaze_dfs.png)
+
 ---
 
 ### Breadth First Search
@@ -135,6 +143,14 @@ Implement `breadthFirstSearch` in `search.py`. Use `util.Queue`. BFS finds the *
 python pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
 python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
 ```
+
+**mediumMaze — BFS** (explores more evenly, finds optimal path):
+
+![mediumMaze BFS](screenshots/medumMaze_bfs.png)
+
+**bigMaze — BFS** (denser exploration than DFS, same optimal cost):
+
+![bigMaze BFS](screenshots/bigMaze_bfs.png)
 
 Also works on the eight-puzzle without any changes:
 
@@ -157,6 +173,18 @@ python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
 ```
 
 > `StayEastSearchAgent` and `StayWestSearchAgent` use exponential cost functions â€” expect very low and very high path costs respectively.
+
+**mediumMaze â€” UCS** (explores most of the maze, guarantees least-cost path):
+
+![mediumMaze UCS](screenshots/mediumMaze_ucs.png)
+
+**mediumDottedMaze â€” StayEastSearchAgent** (UCS with custom cost, Pacman pushed to the East/right side):
+
+![dottedMaze UCS](screenshots/dottedMaze_ucs.png)
+
+**mediumScaryMaze â€” StayWestSearchAgent** (UCS with ghosts, Pacman stays West to avoid danger):
+
+![scaryMaze UCS](screenshots/scaryMaze_ucs.png)
 
 ---
 
